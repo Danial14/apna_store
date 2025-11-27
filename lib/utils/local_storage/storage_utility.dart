@@ -16,4 +16,8 @@ class AppLocalStorage{
   Future<void> removeData<T>(String key) async{
     await _storage.remove(key);
   }
+  Future<void> clearStorage() async{
+    await _storage.erase();
+  }
+
 }
