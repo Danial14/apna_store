@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 class AppHttpClient{
@@ -14,4 +13,23 @@ class AppHttpClient{
     }
     return {};
   }
+  static Future<Map<String, dynamic>> post(String endPoint, Map<String, dynamic> body) async{
+    try{
+      await http.post(Uri.parse("$_baseUrl/$endPoint"), body: body);
+    }
+    catch(e){
+
+    }
+    return {};
+  }
+  static Future<Map<String, dynamic>> put(String endPoint, Map<String, dynamic> body) async{
+    try{
+      await http.put(Uri.parse("$_baseUrl/$endPoint"));
+    }
+    catch(e){
+
+    }
+    return {};
+  }
+
 }
