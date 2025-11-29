@@ -32,7 +32,7 @@ class AppTheme{
     brightness: Brightness.dark,
     fontFamily: "Poppins",
     primaryColor: Colors.blue,
-    scaffoldBackgroundColor: Colors.white,
+    scaffoldBackgroundColor: Colors.black,
     textTheme: AppTextTheme.darkTextTheme,
     inputDecorationTheme: AppTextFormFieldTheme.darkTextFormFieldTheme,
     elevatedButtonTheme: AppElevatedButtonTheme.darkElevatedButtonTheme,
