@@ -2,7 +2,7 @@ import 'package:apna_store/utils/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'features/authentication/screens/onboarding.dart';
+import 'features/authentication/screens/onboarding/onboarding.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -10,12 +10,11 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      //themeMode: ThemeMode.system,
+      debugShowCheckedModeBanner: false,
+        themeMode: ThemeMode.system,
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
-      home: MaterialApp(
-        home: const OnboardingScreen(),
-      ),
+        home: const OnboardingScreen()
     );
   }
 }

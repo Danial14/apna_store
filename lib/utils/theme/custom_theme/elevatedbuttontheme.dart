@@ -5,7 +5,7 @@ class AppElevatedButtonTheme{
   static final lightElevatedButtonTheme = ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
       elevation: 0,
-      backgroundColor: Colors.blue,
+      backgroundColor: Colors.black,
       foregroundColor: Colors.white,
       disabledBackgroundColor: Colors.grey,
       disabledForegroundColor: Colors.grey,
