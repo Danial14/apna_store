@@ -2,6 +2,8 @@ import 'package:apna_store/utils/logging/logging.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 
+import '../../screens/login/login.dart';
+
 class OnboardingController extends GetxController{
   static OnboardingController get find => Get.find();
   final PageController pageController = PageController();
@@ -26,6 +28,7 @@ class OnboardingController extends GetxController{
     }
     else{
       // navigate to login screen
+      Get.offAll(LoginScreen());
     }
   }
 

@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class Sizes{
   Sizes._();
 
@@ -7,7 +9,7 @@ class Sizes{
   static const double md = 16;
   static const double lg = 24;
   static const double xl = 32;
-
+  static const double appbarHeight = kToolbarHeight;
   // Icon sizes
  static const double iconXs = 12;
  static const double iconSm = 16;

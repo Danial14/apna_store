@@ -14,6 +14,11 @@ class TextStrings{
  static const String homeAppbarTitle = "Good day for shopping";
  static const String homeAppbarSubtitle = "Apna store";
 
+ // login
+ static const String loginTitle = "Welcome back,";
+ static const String loginSubtitle = "Discover Limitless Choices and Unmatched Convenience";
+
+
 
 
 }
