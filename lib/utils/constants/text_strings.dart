@@ -23,7 +23,7 @@ class TextStrings{
  static const String rememberMe = "Remember me";
  static const String signIn = "Sign in";
  static const String createAccount = "Create Account";
-
+ static const String orSignInWith = "Or sign in with";
 
 
 }

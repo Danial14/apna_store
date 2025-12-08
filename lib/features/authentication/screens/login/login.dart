@@ -1,3 +1,4 @@
+import 'package:apna_store/utils/constants/colors.dart';
 import 'package:apna_store/utils/devices/device_utility.dart';
 import 'package:apna_store/utils/helpers/helper_functions.dart';
 import 'package:apna_store/utils/theme/theme.dart';
@@ -58,9 +59,9 @@ class LoginScreen extends StatelessWidget {
                       ),
                       SizedBox(height: Sizes.spaceBetweenInputFields / 2),
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Checkbox(value: true, onChanged: (val){}),
                               const Text(TextStrings.rememberMe)
@@ -84,6 +85,64 @@ class LoginScreen extends StatelessWidget {
                     ],
                   ),
                 )
+              ),
+
+              // Divider
+               Row(
+                 mainAxisAlignment: MainAxisAlignment.center,
+                 children: [
+                   Flexible(
+                     child: Divider(
+                       color: isDark ? AppColors.lightGrey : AppColors.darkGrey,
+                       thickness: 0.5,
+                       indent: 50,
+                        endIndent: 15,
+                     ),
+                   ),
+                   Text(TextStrings.orSignInWith.toUpperCase()),
+                   Flexible(
+                     child: Divider(
+                       color: isDark ? AppColors.lightGrey : AppColors.darkGrey,
+                       thickness: 0.5,
+                       indent: 15,
+                       endIndent: 50
+                     ),
+                   )
+                 ]
+               ),
+              SizedBox(height: Sizes.spaceBetweenSections,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      color: AppColors.grey,
+                      borderRadius: BorderRadius.circular(100)
+                    ),
+                    child: IconButton(
+                      onPressed: (){},
+                      icon: Image.asset(ImageStrings.google,
+                      width: Sizes.iconMd,
+                        height: Sizes.iconMd,
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: Sizes.spaceBetweenItems),
+                  Container(
+                    decoration: BoxDecoration(
+                      color: AppColors.grey,
+                      borderRadius: BorderRadius.circular(100)
+                    ),
+                    child: IconButton(
+                      onPressed: (){},
+                      icon: Image(
+                        image: AssetImage("assets/logos/facebook-logo.png"),
+                        width: Sizes.iconMd,
+                        height: Sizes.iconMd
+                      )
+                    )
+                  )
+                ],
               )
             ],
           ),
