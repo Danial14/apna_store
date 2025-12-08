@@ -7,7 +7,7 @@ import '../../../../common/styles/spacing_styles.dart';
 import '../../../../utils/constants/image_strings.dart';
 import '../../../../utils/constants/sizes_strings.dart';
 import '../../../../utils/constants/text_strings.dart';
-
+import 'package:iconsax_flutter/iconsax_flutter.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -25,7 +25,7 @@ class LoginScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Image(height: 150,
-                  image: AssetImage(isDark ? ImageStrings.darkAppLogo : ImageStrings.lightAppLogo),
+                  image: AssetImage(isDark ? ImageStrings.lightAppLogo : ImageStrings.darkAppLogo),
                   ),
                   Text(TextStrings.loginTitle,
                   style: Theme.of(context).textTheme.headlineMedium
@@ -35,6 +35,55 @@ class LoginScreen extends StatelessWidget {
                     style: Theme.of(context).textTheme.bodyMedium,
                   )
                 ],
+              ),
+              Form(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: Sizes.spaceBetweenSections),
+                  child: Column(
+                    children: [
+                      TextFormField(
+                        decoration: InputDecoration(
+                          prefixIcon: Icon(Iconsax.direct_right),
+                          labelText: TextStrings.email
+                        )
+                      ),
+                      SizedBox(height: Sizes.spaceBetweenInputFields),
+                      TextFormField(
+                        decoration: InputDecoration(
+                          prefixIcon: Icon(Iconsax.password_check),
+                          suffixIcon: Icon(Iconsax.eye_slash),
+                          labelText: TextStrings.password
+                        ),
+
+                      ),
+                      SizedBox(height: Sizes.spaceBetweenInputFields / 2),
+                      Row(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Checkbox(value: true, onChanged: (val){}),
+                              const Text(TextStrings.rememberMe)
+                            ]
+                          ),
+                          TextButton(onPressed: (){},
+                          child: const Text(TextStrings.forgotPassword)
+                          )
+                        ]
+                      ),
+                      SizedBox(height: Sizes.spaceBetweenSections),
+                      SizedBox(width: double.infinity,
+                      child: ElevatedButton(onPressed: (){},
+                      child: const Text(TextStrings.signIn),
+                      )
+                      ),
+                      SizedBox(height: Sizes.spaceBetweenInputFields),
+                      SizedBox(width: double.infinity,
+                      child: OutlinedButton(onPressed: (){}, child: const Text(TextStrings.createAccount)),
+                      )
+                    ],
+                  ),
+                )
               )
             ],
           ),

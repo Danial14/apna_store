@@ -17,7 +17,12 @@ class TextStrings{
  // login
  static const String loginTitle = "Welcome back,";
  static const String loginSubtitle = "Discover Limitless Choices and Unmatched Convenience";
-
+ static const String email = "Email";
+ static const String password = "Password";
+ static const String forgotPassword = "Forgot Password?";
+ static const String rememberMe = "Remember me";
+ static const String signIn = "Sign in";
+ static const String createAccount = "Create Account";
 
 
 
