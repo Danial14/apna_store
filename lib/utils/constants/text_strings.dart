@@ -24,6 +24,11 @@ class TextStrings{
  static const String signIn = "Sign in";
  static const String createAccount = "Create Account";
  static const String orSignInWith = "Or sign in with";
-
+  static const String signUpTitle = "Let's Create Your Account";
+  static const String signUpSubTitle = "Create your profile to start your Journey.";
+  static const String firstName = "First Name";
+  static const String lastName = "Last Name";
+  static const String userName = "User Name";
+  static const String phone = "Phone";
 
 }
