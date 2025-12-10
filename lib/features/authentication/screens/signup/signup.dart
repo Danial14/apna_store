@@ -73,6 +73,13 @@ class Signup extends StatelessWidget {
                         prefixIcon: Icon(Iconsax.password_check),
                         suffixIcon: Icon(Iconsax.eye_slash)
                       )
+                    ),
+                    SizedBox(height: Sizes.spaceBetweenSections),
+                    Row(
+                      children: [
+                        SizedBox(width: 24,child: Checkbox(value: true, onChanged: (val){})),
+                        const SizedBox(width: Sizes.spaceBetweenItems)
+                      ]
                     )
                   ]
                 )
