@@ -30,5 +30,8 @@ class TextStrings{
   static const String lastName = "Last Name";
   static const String userName = "User Name";
   static const String phone = "Phone";
+  static const String iAgreeTo = "I Agree To";
+  static const String termsAndConditions = "Terms and Conditions";
+  static const String privacyPolicy = "Privacy Policy";
 
 }

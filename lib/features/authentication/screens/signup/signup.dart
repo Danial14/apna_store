@@ -1,8 +1,11 @@
 import 'package:apna_store/utils/constants/text_strings.dart';
+import 'package:apna_store/utils/devices/device_utility.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 
+import '../../../../utils/constants/colors.dart';
 import '../../../../utils/constants/sizes_strings.dart';
+import '../../../../utils/helpers/helper_functions.dart';
 
 class Signup extends StatelessWidget {
   const Signup({super.key});
@@ -78,7 +81,22 @@ class Signup extends StatelessWidget {
                     Row(
                       children: [
                         SizedBox(width: 24,child: Checkbox(value: true, onChanged: (val){})),
-                        const SizedBox(width: Sizes.spaceBetweenItems)
+                        const SizedBox(width: Sizes.spaceBetweenItems),
+                        Text.rich(TextSpan(
+                          children: [
+                            TextSpan(
+                              text: TextStrings.iAgreeTo,
+                              style: Theme.of(context).textTheme.bodySmall
+                            ),
+                            TextSpan(
+                              text: TextStrings.termsAndConditions,
+                              style: Theme.of(context).textTheme.bodyMedium!.apply(
+                                color: AppHelperFunctions.isDarkMode(context) ? AppColors.light : AppColors.primary,
+                                decoration: TextDecoration.underline
+                              )
+                            )
+                          ]
+                        ))
                       ]
                     )
                   ]
