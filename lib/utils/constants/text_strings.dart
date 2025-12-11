@@ -37,6 +37,6 @@ class TextStrings {
   static const String iAgreeTo = "I Agree To ";
   static const String termsAndConditions = "Terms and Conditions";
   static const String privacyPolicy = "Privacy Policy";
-  static const String signUpButtonText = "Sign Up";
+  static const String signUpButtonText = "Create Account";
   static const String signUpWith = "Or Sign Up With";
 }

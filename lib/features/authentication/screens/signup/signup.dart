@@ -1,6 +1,10 @@
+import 'package:apna_store/common/widgets/form/social_footer.dart';
+import 'package:apna_store/features/authentication/screens/signup/verifyemail.dart';
+import 'package:apna_store/features/authentication/screens/signup/widgets/privacy_policy.dart';
 import 'package:apna_store/utils/constants/text_strings.dart';
 import 'package:apna_store/utils/devices/device_utility.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 
 import '../../../../common/widgets/form/form_divider_widget.dart';
@@ -81,53 +85,21 @@ class Signup extends StatelessWidget {
                       )
                     ),
                     SizedBox(height: Sizes.spaceBetweenSections),
-                    Row(
-                      children: [
-                        SizedBox(width: 24,child: Checkbox(value: true, onChanged: (val){})),
-                        const SizedBox(width: Sizes.spaceBetweenItems),
-                        Text.rich(TextSpan(
-                          children: [
-                            TextSpan(
-                              text: TextStrings.iAgreeTo,
-                              style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                                fontSize: 10
-                              )
-                            ),
-                            TextSpan(
-                              text: TextStrings.privacyPolicy,
-                              style: Theme.of(context).textTheme.bodyMedium!.apply(
-                                color: isDark ? AppColors.light : AppColors.primary,
-                                decoration: TextDecoration.underline
-                              ).copyWith(fontSize: 12,
-                              fontWeight: FontWeight.bold
-                              )
-                            ),
-                            TextSpan(
-                              text: " and ",
-                              style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                                fontSize: 10
-                              )
-                            ),
-                            TextSpan(
-                              text: TextStrings.termsAndConditions,
-                              style: Theme.of(context).textTheme.bodyMedium!.apply(
-                                color: isDark ? AppColors.light : AppColors.primary,
-                                decoration: TextDecoration.underline
-                              ).copyWith(fontSize: 12,
-                              fontWeight: FontWeight.bold
-                              )
-                            )
-                          ]
-                        ))
-                      ]
-                    ),
+                    TermsAndConditions(isDark: isDark),
                     const SizedBox(height: Sizes.spaceBetweenSections,),
                     SizedBox(width: double.infinity,
-                    child: ElevatedButton(onPressed: (){},
+                    child: ElevatedButton(onPressed: (){
+                      Get.to((){
+                        return VerifyEmail();
+                      });
+                    },
                     child: Text(TextStrings.signUpButtonText)
                     )
                     ),
-                    FormDivider(isDark: isDark, text: TextStrings.signUpWith,)
+                    SizedBox(height: Sizes.spaceBetweenSections,),
+                    FormDivider(isDark: isDark, text: TextStrings.signUpWith,),
+                    SizedBox(height: Sizes.spaceBetweenSections),
+                    SocialFooter()
                   ]
                 )
               )
@@ -138,3 +110,5 @@ class Signup extends StatelessWidget {
     );
   }
 }
+
+
