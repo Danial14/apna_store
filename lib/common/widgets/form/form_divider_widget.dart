@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 
 import '../../../utils/constants/colors.dart';
-import '../../../utils/constants/text_strings.dart';
 
 class FormDivider extends StatelessWidget {
   const FormDivider({
     super.key,
     required this.isDark,
+    required this.text
   });
 
   final bool isDark;
+  final String text;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +25,7 @@ class FormDivider extends StatelessWidget {
               endIndent: 15,
             ),
           ),
-          Text(TextStrings.orSignInWith.toUpperCase()),
+          Text(text),
           Flexible(
             child: Divider(
                 color: isDark ? AppColors.lightGrey : AppColors.darkGrey,

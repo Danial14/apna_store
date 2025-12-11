@@ -3,6 +3,7 @@ import 'package:apna_store/utils/devices/device_utility.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 
+import '../../../../common/widgets/form/form_divider_widget.dart';
 import '../../../../utils/constants/colors.dart';
 import '../../../../utils/constants/sizes_strings.dart';
 import '../../../../utils/helpers/helper_functions.dart';
@@ -12,6 +13,7 @@ class Signup extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isDark = AppHelperFunctions.isDarkMode(context);
     return Scaffold(
       appBar: AppBar(),
       body: SingleChildScrollView(
@@ -19,6 +21,7 @@ class Signup extends StatelessWidget {
           Sizes.defaultSpace
         ),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(TextStrings.signUpTitle,
               style: Theme.of(context).textTheme.headlineMedium,
@@ -86,19 +89,45 @@ class Signup extends StatelessWidget {
                           children: [
                             TextSpan(
                               text: TextStrings.iAgreeTo,
-                              style: Theme.of(context).textTheme.bodySmall
+                              style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                                fontSize: 10
+                              )
+                            ),
+                            TextSpan(
+                              text: TextStrings.privacyPolicy,
+                              style: Theme.of(context).textTheme.bodyMedium!.apply(
+                                color: isDark ? AppColors.light : AppColors.primary,
+                                decoration: TextDecoration.underline
+                              ).copyWith(fontSize: 12,
+                              fontWeight: FontWeight.bold
+                              )
+                            ),
+                            TextSpan(
+                              text: " and ",
+                              style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                                fontSize: 10
+                              )
                             ),
                             TextSpan(
                               text: TextStrings.termsAndConditions,
                               style: Theme.of(context).textTheme.bodyMedium!.apply(
-                                color: AppHelperFunctions.isDarkMode(context) ? AppColors.light : AppColors.primary,
+                                color: isDark ? AppColors.light : AppColors.primary,
                                 decoration: TextDecoration.underline
+                              ).copyWith(fontSize: 12,
+                              fontWeight: FontWeight.bold
                               )
                             )
                           ]
                         ))
                       ]
+                    ),
+                    const SizedBox(height: Sizes.spaceBetweenSections,),
+                    SizedBox(width: double.infinity,
+                    child: ElevatedButton(onPressed: (){},
+                    child: Text(TextStrings.signUpButtonText)
                     )
+                    ),
+                    FormDivider(isDark: isDark, text: TextStrings.signUpWith,)
                   ]
                 )
               )

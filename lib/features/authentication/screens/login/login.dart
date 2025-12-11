@@ -84,7 +84,7 @@ class LoginScreen extends StatelessWidget {
               ),
 
               // Divider
-               FormDivider(isDark: isDark),
+               FormDivider(isDark: isDark, text: TextStrings.orSignInWith.toUpperCase()),
               SizedBox(height: Sizes.spaceBetweenSections,),
               SocialFooter()
             ],
