@@ -39,4 +39,8 @@ class TextStrings {
   static const String privacyPolicy = "Privacy Policy";
   static const String signUpButtonText = "Create Account";
   static const String signUpWith = "Or Sign Up With";
+  static const String confirmEmail = "Verify your email address";
+  static const String confirmEmailSubtitle = "Congratulations! Your Account Awaits: Verify your Email to Start Shopping and Experience";
+  static const String continueText = "Continue";
+  static const String resendEmail = "Resend Email";
 }

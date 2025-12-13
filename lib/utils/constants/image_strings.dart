@@ -11,4 +11,8 @@ class ImageStrings{
   static const String onboardingImageTwo = "assets/images/onboarding_images/on-boarding-image-2.png";
   static const String onboardingImageThree = "assets/images/onboarding_images/on-boarding-image-3.png";
 
+  // Animations
+  static const String productIllustrationImage = "";
+  static const String deliveredEmailIllustration = "assets/images/animations/sammy-line-man-receives-a-mail.png";
+
 }
