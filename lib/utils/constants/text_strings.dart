@@ -43,4 +43,7 @@ class TextStrings {
   static const String confirmEmailSubtitle = "Congratulations! Your Account Awaits: Verify your Email to Start Shopping and Experience";
   static const String continueText = "Continue";
   static const String resendEmail = "Resend Email";
+  static const String yourAccountCreatedTitle = "Your Account Created Successfully";
+  static const String yourAccountCreatedSubtitle = "Welcome to Your Ultimate Shopping Destination: Your Account is Created, Unleash the Joy of Seamless Online Shopping!";
+
 }

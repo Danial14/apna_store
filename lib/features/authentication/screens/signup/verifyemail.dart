@@ -1,4 +1,5 @@
 import 'package:apna_store/features/authentication/screens/login/login.dart';
+import 'package:apna_store/features/authentication/screens/signup/success_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -52,7 +53,20 @@ class VerifyEmail extends StatelessWidget {
             SizedBox(height: Sizes.spaceBetweenSections),
             SizedBox(
               width: double.infinity,
-              child: ElevatedButton(onPressed: (){},
+              child: ElevatedButton(onPressed: (){
+                Get.to((){
+                  return SuccessScreen(callback: (){
+                    Get.offAll(
+                            (){
+                          return LoginScreen();
+                        }
+                    );
+                  },
+                  imageTitle: TextStrings.yourAccountCreatedTitle,
+                    imageSubtitle: TextStrings.confirmEmailSubtitle,
+                  );
+                });
+              },
               style: ElevatedButton.styleFrom(
                 backgroundColor: AppHelperFunctions.isDarkMode(context) ? AppColors.primary : AppColors.dark
               ), child: Text(TextStrings.continueText,
