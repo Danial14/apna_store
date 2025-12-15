@@ -1,7 +1,8 @@
+import 'package:apna_store/features/authentication/screens/password_configuration/resetpassword.dart';
 import 'package:apna_store/utils/constants/sizes_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
-
+import 'package:get/get.dart';
 import '../../../../utils/constants/text_strings.dart';
 
 class ForgetPassword extends StatelessWidget {
@@ -32,7 +33,9 @@ class ForgetPassword extends StatelessWidget {
           SizedBox(height: Sizes.spaceBetweenSections),
           SizedBox(width: double.infinity,
           child: ElevatedButton(onPressed: (){
-
+            Get.to((){
+              return ResetPassword();
+            });
           }, child: const Text(TextStrings.submit)),
           )
         ],
