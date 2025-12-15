@@ -45,5 +45,7 @@ class TextStrings {
   static const String resendEmail = "Resend Email";
   static const String yourAccountCreatedTitle = "Your Account Created Successfully";
   static const String yourAccountCreatedSubtitle = "Welcome to Your Ultimate Shopping Destination: Your Account is Created, Unleash the Joy of Seamless Online Shopping!";
-
+  static const String forgotPasswordTitle = "Forgot Password";
+  static const String forgotPasswordSubTitle = "Don't worry, it happens. Just enter your email and we will send you a password reset link.";
+  static const String submit = "Submit";
 }

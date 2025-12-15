@@ -24,7 +24,7 @@ class SuccessScreen extends StatelessWidget {
               Image(
                 image: AssetImage(ImageStrings.accountCreated,
                 ),
-                width: AppHelperFunctions.screenWidth(context) * 0.9,
+                width: AppHelperFunctions.screenWidth(context) * 0.6,
               ),
               SizedBox(height: Sizes.spaceBetweenSections),
               Text(imageTitle,

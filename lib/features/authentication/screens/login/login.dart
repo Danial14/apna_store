@@ -14,6 +14,7 @@ import '../../../../utils/constants/sizes_strings.dart';
 import '../../../../utils/constants/text_strings.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 
+import '../password_configuration/forgetpassword.dart';
 import '../signup/signup.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -59,7 +60,11 @@ class LoginScreen extends StatelessWidget {
                               const Text(TextStrings.rememberMe)
                             ]
                           ),
-                          TextButton(onPressed: (){},
+                          TextButton(onPressed: (){
+                            Get.to((){
+                              return ForgetPassword();
+                            });
+                          },
                           child: const Text(TextStrings.forgotPassword)
                           )
                         ]
