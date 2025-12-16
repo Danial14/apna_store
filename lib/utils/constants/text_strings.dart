@@ -48,4 +48,7 @@ class TextStrings {
   static const String forgotPasswordTitle = "Forgot Password";
   static const String forgotPasswordSubTitle = "Don't worry, it happens. Just enter your email and we will send you a password reset link.";
   static const String submit = "Submit";
+  static const String resetPasswordTitle = "Password Reset Email Sent";
+  static const String resetPasswordSubTitle = "Check your email for a link to reset your password.";
+  static const String done = "Done";
 }

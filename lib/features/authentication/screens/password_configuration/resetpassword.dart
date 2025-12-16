@@ -5,6 +5,7 @@ import 'package:iconsax_flutter/iconsax_flutter.dart';
 
 import '../../../../utils/constants/image_strings.dart';
 import '../../../../utils/constants/sizes_strings.dart';
+import '../../../../utils/constants/text_strings.dart';
 import '../../../../utils/helpers/helper_functions.dart';
 
 class ResetPassword extends StatelessWidget {
@@ -27,24 +28,32 @@ class ResetPassword extends StatelessWidget {
         child: Column(
           children: [
             Image(
-              image: AssetImage(ImageStrings.accountCreated,
+              image: AssetImage(ImageStrings.deliveredEmailIllustration,
               ),
               width: AppHelperFunctions.screenWidth(context) * 0.6,
             ),
             SizedBox(height: Sizes.spaceBetweenSections),
-            Text('imageTitle',
+            Text(TextStrings.resetPasswordTitle,
               style: Theme.of(context).textTheme.headlineMedium,
               textAlign: TextAlign.center,
             ),
             SizedBox(height: Sizes.spaceBetweenItems),
-            Text("support@gmail.com",
-                style: Theme.of(context).textTheme.labelLarge,
-                textAlign: TextAlign.center
-            ),
-            SizedBox(height: Sizes.spaceBetweenSections,),
-            Text('imageSubtitle',
+            Text(TextStrings.resetPasswordSubTitle,
                 style: Theme.of(context).textTheme.labelMedium,
                 textAlign: TextAlign.center
+            ),
+            SizedBox(height: Sizes.spaceBetweenSections),
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(onPressed: (){}, child: Text(TextStrings.done)),
+            ),
+            SizedBox(height: Sizes.spaceBetweenSections),
+            SizedBox(
+              width: double.infinity,
+              child: TextButton(onPressed: (){
+              },
+              child: Text(TextStrings.resendEmail),
+              )
             )
           ],
         ),
