@@ -5,6 +5,7 @@ import 'package:apna_store/utils/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../../bottom_navigation.dart';
 import '../../../../common/styles/spacing_styles.dart';
 import '../../../../common/widgets/form/form_divider_widget.dart';
 import '../../../../common/widgets/form/form_header_widget.dart';
@@ -71,7 +72,11 @@ class LoginScreen extends StatelessWidget {
                       ),
                       SizedBox(height: Sizes.spaceBetweenSections),
                       SizedBox(width: double.infinity,
-                      child: ElevatedButton(onPressed: (){},
+                      child: ElevatedButton(onPressed: (){
+                        Get.offAll((){
+                          return BottomNavigation();
+                        });
+                      },
                       child: const Text(TextStrings.signIn),
                       )
                       ),
@@ -99,6 +104,7 @@ class LoginScreen extends StatelessWidget {
     );
   }
 }
+
 
 
 
