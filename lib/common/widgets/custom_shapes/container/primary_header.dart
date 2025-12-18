@@ -1,0 +1,39 @@
+import 'package:flutter/material.dart';
+
+import '../../../../utils/constants/colors.dart';
+import '../curved_edges/curved_edge_widget.dart';
+import 'circular_container.dart';
+
+class PrimaryHeader extends StatelessWidget {
+  final Widget child;
+  const PrimaryHeader({
+    super.key,
+    required this.child
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return CurvedEdgeWidget(child: Container(
+      decoration: BoxDecoration(
+          color: AppColors.primary
+      ),
+      padding: EdgeInsets.all(0),
+      child: SizedBox(
+        height: 400,
+        child: Stack(
+          children: [
+            Positioned(
+                top: -150,
+                right: -250,
+                child: CircularShape(backgroundColor: AppColors.textWhite.withOpacity(0.1),)),
+            Positioned(
+                top: 100,
+                right: -300,
+                child: CircularShape(backgroundColor: AppColors.textWhite.withOpacity(0.1),)),
+            child
+          ],
+        ),
+      ),
+    ),);
+  }
+}
