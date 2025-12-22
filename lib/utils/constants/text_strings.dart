@@ -15,7 +15,7 @@ class TextStrings {
 
   // Home
   static const String homeAppbarTitle = "Good day for shopping";
-  static const String homeAppbarSubtitle = "Apna store";
+  static const String homeAppbarSubTitle = "Apna store";
 
   // login
   static const String loginTitle = "Welcome back,";
