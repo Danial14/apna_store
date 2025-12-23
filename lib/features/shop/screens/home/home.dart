@@ -8,6 +8,7 @@ import '../../../../common/widgets/appbar/customappbar.dart';
 import '../../../../common/widgets/custom_shapes/container/primary_header.dart';
 import '../../../../common/widgets/product_cart_widget/custom_cart.dart';
 import '../../../../common/widgets/search_container/search_container.dart';
+import '../../../../common/widgets/section_heading/section_heading.dart';
 import '../../../../utils/constants/colors.dart';
 import '../../../../utils/constants/sizes_strings.dart';
 import '../../../../utils/constants/text_strings.dart';
@@ -34,7 +35,30 @@ class Home extends StatelessWidget {
                   child: Column(
                     children: [
                       HeadingSection(text: "Popular Categories",
-                      buttonText: "",
+                      showActionButton: false,
+                      ),
+                      SizedBox(height: Sizes.spaceBetweenSections,),
+                      SizedBox(
+                        height: 80,
+                        child: ListView.builder(
+                          itemCount: 6,
+                          itemBuilder: (ctx, position){
+                            return Column(
+                              children: [
+                                Container(
+                                  width: 56,
+                                  height: 56,
+                                  padding: EdgeInsets.all(Sizes.sm),
+                                  decoration: BoxDecoration(
+                                    color: AppColors.white,
+                                    borderRadius: BorderRadius.circular(100)
+                                  ),
+                                )
+                              ],
+                            );
+                          },
+                          scrollDirection: Axis.horizontal,
+                        ),
                       )
                     ],
                   )
@@ -48,34 +72,7 @@ class Home extends StatelessWidget {
   }
 }
 
-class HeadingSection extends StatelessWidget {
-  final String text, buttonText;
-  final Color? textColor;
-  final bool showActionButton;
-  const HeadingSection({
-    super.key,
-    required this.text,
-    required this.buttonText,
-    this.showActionButton = true,
 
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Text(text,
-        style: Theme.of(context).textTheme.headlineSmall,
-          maxLines: 1,
-          overflow: TextOverflow.ellipsis,
-        ),
-        if(showActionButton) TextButton(onPressed: (){},
-        child: Text(buttonText),
-        )
-      ],
-    );
-  }
-}
 
 
 
