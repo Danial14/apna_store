@@ -18,4 +18,10 @@ class ImageStrings{
 
   // categories
   static const smartPhone = "assets/icons/categories/icons8-smartphone-64.png";
+
+  // banners
+  static const promoBannerOne = "assets/images/banners/promo-banner-1.png";
+  static const promoBannerTwo = "assets/images/banners/promo-banner-2.png";
+  static const promoBannerThree = "assets/images/banners/promo-banner-3.png";
+
 }

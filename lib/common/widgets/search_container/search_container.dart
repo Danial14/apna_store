@@ -10,38 +10,43 @@ class SearchContainer extends StatelessWidget {
   final IconData? icon;
   final bool showBackground;
   final bool showBorder;
+  final VoidCallback? onPressed;
 
   const SearchContainer({
     super.key,
     required this.text,
     required this.icon,
     this.showBackground = true,
-    this.showBorder = true
+    this.showBorder = true,
+    this.onPressed
   });
 
   @override
   Widget build(BuildContext context) {
     final bool isDark = AppHelperFunctions.isDarkMode(context);
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: Sizes.defaultSpace),
-      child: Container(
-        width: DeviceUtils.getScreenWidth(context),
-        padding: EdgeInsets.all(Sizes.md),
-        decoration: BoxDecoration(
-            color: showBackground ? isDark ? AppColors.light : AppColors.dark : Colors.transparent,
-            borderRadius: BorderRadius.circular(Sizes.cardRadiusLg),
-            border: showBorder ? Border.all(color: AppColors.grey) : null
-        ),
-        child: Row(
-          children: [
-            Icon(icon,
-              color: AppColors.darkGrey,
-            ),
-            SizedBox(width: Sizes.spaceBetweenItems,),
-            Text(text,
-                style: Theme.of(context).textTheme.bodySmall
-            )
-          ],
+    return GestureDetector(
+      onTap: onPressed,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: Sizes.defaultSpace),
+        child: Container(
+          width: DeviceUtils.getScreenWidth(context),
+          padding: EdgeInsets.all(Sizes.md),
+          decoration: BoxDecoration(
+              color: showBackground ? isDark ? AppColors.light : AppColors.dark : Colors.transparent,
+              borderRadius: BorderRadius.circular(Sizes.cardRadiusLg),
+              border: showBorder ? Border.all(color: AppColors.grey) : null
+          ),
+          child: Row(
+            children: [
+              Icon(icon,
+                color: AppColors.darkGrey,
+              ),
+              SizedBox(width: Sizes.spaceBetweenItems,),
+              Text(text,
+                  style: Theme.of(context).textTheme.bodySmall
+              )
+            ],
+          ),
         ),
       ),
     );
