@@ -16,4 +16,6 @@ class ImageStrings{
   static const String deliveredEmailIllustration = "assets/images/animations/sammy-line-man-receives-a-mail.png";
   static const String accountCreated = "assets/images/animations/account_created.png";
 
+  // categories
+  static const smartPhone = "assets/icons/categories/icons8-smartphone-64.png";
 }
