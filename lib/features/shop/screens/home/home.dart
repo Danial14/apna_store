@@ -1,7 +1,10 @@
+import 'package:apna_store/common/widgets/custom_shapes/container/circular_container.dart';
 import 'package:apna_store/features/shop/screens/home/widgets/home_categories.dart';
 import 'package:apna_store/features/shop/screens/home/widgets/homeappbar.dart';
+import 'package:apna_store/features/shop/screens/home/widgets/promo_slider.dart';
 import 'package:apna_store/utils/devices/device_utility.dart';
 import 'package:apna_store/utils/helpers/helper_functions.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 
@@ -52,7 +55,7 @@ class Home extends StatelessWidget {
             // body
             Padding(
               padding: const EdgeInsets.all(Sizes.defaultSpace),
-              child: RoundedImage(imageUrl: ImageStrings.promoBannerTwo,),
+              child: PromoSlider(),
             )
           ],
         )
@@ -60,6 +63,8 @@ class Home extends StatelessWidget {
     );
   }
 }
+
+
 
 
 
