@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 
 import '../../../../utils/constants/colors.dart';
+import '../../../../utils/constants/sizes_strings.dart';
 
 class CircularShape extends StatelessWidget {
   const CircularShape({
     super.key,
     this.child,
-    this.width = 400,
-    this.height = 400,
-    this.radius = 400,
+    this.width,
+    this.height,
+    this.radius = Sizes.cardRadiusLg,
     this.padding = EdgeInsets.zero,
     this.margin = EdgeInsets.zero,
     this.backgroundColor = AppColors.white

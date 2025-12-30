@@ -11,8 +11,10 @@ import 'package:get/get.dart';
 import '../../../controllers/home_controller.dart';
 
 class PromoSlider extends StatelessWidget {
+  final List<String> banners;
   const PromoSlider({
     super.key,
+    required this.banners
   });
 
   @override
@@ -27,17 +29,15 @@ class PromoSlider extends StatelessWidget {
                 controller.updatePageIndicator(index);
             }
           ),
-          items: [
-            RoundedImage(imageUrl: ImageStrings.promoBannerOne),
-            RoundedImage(imageUrl: ImageStrings.promoBannerTwo),
-            RoundedImage(imageUrl: ImageStrings.promoBannerThree),
-          ],
+          items: banners.map((image){
+            return RoundedImage(imageUrl: image);
+          }).toList(),
         ),
         SizedBox(height: Sizes.spaceBetweenItems),
         Obx(()=>Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            for(int i = 0; i < 3; i++)
+            for(int i = 0; i < banners.length; i++)
               CircularShape(
                   width: 20,
                   height: 4,

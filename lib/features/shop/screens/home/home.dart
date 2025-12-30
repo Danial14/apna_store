@@ -12,7 +12,8 @@ import '../../../../common/widgets/appbar/customappbar.dart';
 import '../../../../common/widgets/custom_shapes/container/primary_header.dart';
 import '../../../../common/widgets/image_text_widget/vertical_image_text.dart';
 import '../../../../common/widgets/images/rounded_image.dart';
-import '../../../../common/widgets/product_cart_widget/custom_cart.dart';
+//import '../../../../common/widgets/product_cart_widget/custom_cart.dart';
+import '../../../../common/widgets/products/product_card/product_card_vertical.dart';
 import '../../../../common/widgets/search_container/search_container.dart';
 import '../../../../common/widgets/section_heading/section_heading.dart';
 import '../../../../utils/constants/colors.dart';
@@ -55,7 +56,20 @@ class Home extends StatelessWidget {
             // body
             Padding(
               padding: const EdgeInsets.all(Sizes.defaultSpace),
-              child: PromoSlider(),
+              child: Column(
+                children: [
+                  PromoSlider(banners: [
+                    ImageStrings.promoBannerOne,
+                    ImageStrings.promoBannerTwo,
+                    ImageStrings.promoBannerThree
+                  ],
+                  ),
+                  SizedBox(height: Sizes.spaceBetweenSections),
+                  VerticalProductCard(
+
+                  )
+                ],
+              ),
             )
           ],
         )
