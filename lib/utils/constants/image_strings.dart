@@ -25,6 +25,6 @@ class ImageStrings{
   static const promoBannerThree = "assets/images/banners/promo-banner-3.png";
 
   // products
-  static const productImageOne = "assets/images/products/leather_jacket_1.png";
+  static const productImageOne = "assets/images/products/nike-shoes.png";
 
 }

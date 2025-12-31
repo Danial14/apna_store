@@ -1,12 +1,14 @@
 import 'package:apna_store/common/widgets/custom_shapes/container/circular_container.dart';
 import 'package:apna_store/common/widgets/images/rounded_image.dart';
 import 'package:flutter/material.dart';
+import 'package:iconsax_flutter/iconsax_flutter.dart';
 
 import '../../../../utils/constants/colors.dart';
 import '../../../../utils/constants/image_strings.dart';
 import '../../../../utils/constants/sizes_strings.dart';
 import '../../../../utils/helpers/helper_functions.dart';
 import '../../../styles/shadow.dart';
+import '../../icons/circular_icon.dart';
 
 class VerticalProductCard extends StatelessWidget {
   const VerticalProductCard({super.key});
@@ -32,7 +34,25 @@ class VerticalProductCard extends StatelessWidget {
             backgroundColor: isDark ? AppColors.dark : AppColors.light,
             child: Stack(
               children: [
-                RoundedImage(imageUrl: ImageStrings.productImageOne)
+                RoundedImage(imageUrl: ImageStrings.productImageOne,
+                applyImageRadius: true,
+                ),
+                Positioned(
+                  top: 12,
+                  child: CircularShape(
+                    radius: Sizes.sm,
+                    backgroundColor: AppColors.secondary,
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: Sizes.sm,
+                      vertical: Sizes.xs
+                    ),
+                    child: Text("25%",
+                    style: Theme.of(context).textTheme.labelLarge!.apply(color: AppColors.black),
+                    ),
+                  ),
+                ),
+
+                CircularIcon(isDark: isDark),
               ]
             ),
           )
@@ -41,3 +61,5 @@ class VerticalProductCard extends StatelessWidget {
     );
   }
 }
+
+
