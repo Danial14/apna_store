@@ -52,7 +52,19 @@ class VerticalProductCard extends StatelessWidget {
                   ),
                 ),
 
-                CircularIcon(isDark: isDark),
+                Positioned(
+                  top: 0,
+                  right: 0,
+                  child: CircularIcon(isDark: isDark,
+                  icon: Iconsax.heart,
+                  color: Colors.red,
+                  ),
+                ),
+
+                // Details
+                Padding(
+                  padding: EdgeInsets.only(left: Sizes.sm),
+                )
               ]
             ),
           )
