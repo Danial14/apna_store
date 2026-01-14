@@ -65,14 +65,50 @@ class VerticalProductCard extends StatelessWidget {
               ]
             ),
           ),
+          SizedBox(height: Sizes.spaceBetweenItems / 2),
           // Details
           Padding(
               padding: EdgeInsets.only(left: Sizes.sm),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     ProductTitleText(
                       title: "Nike Shoes",
                       //smallSize: true,
+                    ),
+                    SizedBox(
+                      height: Sizes.spaceBetweenItems / 2,
+                    ),
+                    Row(
+                      children: [
+                        Text("Nike",
+                        style: Theme.of(context).textTheme.labelMedium,
+                          overflow: TextOverflow.ellipsis,
+                          maxLines: 1,
+                        ),
+                        const SizedBox(width: Sizes.xs),
+                        Icon(Iconsax.verify,
+                        color: AppColors.primary,
+                          size: Sizes.iconXs
+                        ),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Text("\$35",
+                        maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: Theme.of(context).textTheme.headlineMedium
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(Sizes.cardRadiusMd),
+                              bottomRight: Radius.circular(Sizes.productImageRadius)
+                            )
+                          ),
+                        )
+                      ]
                     )
                   ]
               )
