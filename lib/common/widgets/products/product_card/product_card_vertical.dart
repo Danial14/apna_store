@@ -9,6 +9,7 @@ import '../../../../utils/constants/sizes_strings.dart';
 import '../../../../utils/helpers/helper_functions.dart';
 import '../../../styles/shadow.dart';
 import '../../icons/circular_icon.dart';
+import '../../texts/product_title_text.dart';
 
 class VerticalProductCard extends StatelessWidget {
   const VerticalProductCard({super.key});
@@ -61,12 +62,20 @@ class VerticalProductCard extends StatelessWidget {
                   ),
                 ),
 
-                // Details
-                Padding(
-                  padding: EdgeInsets.only(left: Sizes.sm),
-                )
               ]
             ),
+          ),
+          // Details
+          Padding(
+              padding: EdgeInsets.only(left: Sizes.sm),
+              child: Column(
+                  children: [
+                    ProductTitleText(
+                      title: "Nike Shoes",
+                      //smallSize: true,
+                    )
+                  ]
+              )
           )
         ],
       ),

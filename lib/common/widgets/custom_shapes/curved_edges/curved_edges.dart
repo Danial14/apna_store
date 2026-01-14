@@ -25,6 +25,8 @@ class CurvedEdges extends CustomClipper<Path>{
 
   @override
   bool shouldReclip(covariant CustomClipper<dynamic> oldClipper) {
+    // if false is returned getClip is only called when UI is build first time
+    // if true is returned getClip is called every time UI is rebuilt
     return false;
   }
 
