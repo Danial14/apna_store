@@ -65,9 +65,19 @@ class Home extends StatelessWidget {
                   ],
                   ),
                   SizedBox(height: Sizes.spaceBetweenSections),
-                  VerticalProductCard(
+                  GridView.builder(
+                      itemCount: 4,
+                      shrinkWrap: true,
+                      physics: const ScrollPhysics(),
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,
+                    mainAxisSpacing: Sizes.gridViewSpacing,
+                    crossAxisSpacing: Sizes.gridViewSpacing,
+                    mainAxisExtent: 288
+                  ),
+                      itemBuilder: (context, index){
+                    return VerticalProductCard();
+                      }),
 
-                  )
                 ],
               ),
             )

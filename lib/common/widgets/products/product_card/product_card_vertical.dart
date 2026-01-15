@@ -17,103 +17,115 @@ class VerticalProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final bool isDark = AppHelperFunctions.isDarkMode(context);
-    return Container(
-      width: 180,
-      padding: const EdgeInsets.all(1),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(Sizes.productImageRadius),
-        boxShadow: [
-          CustomShadow.verticalShadow
-        ],
-        color: isDark ? AppColors.darkGrey : AppColors.white
-      ),
-      child: Column(
-        children: [
-          CircularShape(
-            height: 180,
-            padding: EdgeInsets.all(Sizes.sm),
-            backgroundColor: isDark ? AppColors.dark : AppColors.light,
-            child: Stack(
-              children: [
-                RoundedImage(imageUrl: ImageStrings.productImageOne,
-                applyImageRadius: true,
-                ),
-                Positioned(
-                  top: 12,
-                  child: CircularShape(
-                    radius: Sizes.sm,
-                    backgroundColor: AppColors.secondary,
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: Sizes.sm,
-                      vertical: Sizes.xs
-                    ),
-                    child: Text("25%",
-                    style: Theme.of(context).textTheme.labelLarge!.apply(color: AppColors.black),
+    return GestureDetector(
+      onTap: (){},
+      child: Container(
+        width: 180,
+        padding: const EdgeInsets.all(1),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(Sizes.productImageRadius),
+          boxShadow: [
+            CustomShadow.verticalShadow
+          ],
+          color: isDark ? AppColors.darkGrey : AppColors.white
+        ),
+        child: Column(
+          children: [
+            CircularShape(
+              height: 180,
+              padding: EdgeInsets.all(Sizes.sm),
+              backgroundColor: isDark ? AppColors.dark : AppColors.light,
+              child: Stack(
+                children: [
+                  RoundedImage(imageUrl: ImageStrings.productImageOne,
+                  applyImageRadius: true,
+                  ),
+                  Positioned(
+                    top: 12,
+                    child: CircularShape(
+                      radius: Sizes.sm,
+                      backgroundColor: AppColors.secondary,
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: Sizes.sm,
+                        vertical: Sizes.xs
+                      ),
+                      child: Text("25%",
+                      style: Theme.of(context).textTheme.labelLarge!.apply(color: AppColors.black),
+                      ),
                     ),
                   ),
-                ),
 
-                Positioned(
-                  top: 0,
-                  right: 0,
-                  child: CircularIcon(isDark: isDark,
-                  icon: Iconsax.heart,
-                  color: Colors.red,
+                  Positioned(
+                    top: 0,
+                    right: 0,
+                    child: CircularIcon(isDark: isDark,
+                    icon: Iconsax.heart,
+                    color: Colors.red,
+                    ),
                   ),
-                ),
 
-              ]
+                ]
+              ),
             ),
-          ),
-          SizedBox(height: Sizes.spaceBetweenItems / 2),
-          // Details
-          Padding(
-              padding: EdgeInsets.only(left: Sizes.sm),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    ProductTitleText(
-                      title: "Nike Shoes",
-                      //smallSize: true,
-                    ),
-                    SizedBox(
-                      height: Sizes.spaceBetweenItems / 2,
-                    ),
-                    Row(
-                      children: [
-                        Text("Nike",
-                        style: Theme.of(context).textTheme.labelMedium,
-                          overflow: TextOverflow.ellipsis,
-                          maxLines: 1,
-                        ),
-                        const SizedBox(width: Sizes.xs),
-                        Icon(Iconsax.verify,
-                        color: AppColors.primary,
-                          size: Sizes.iconXs
-                        ),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        Text("\$35",
-                        maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                          style: Theme.of(context).textTheme.headlineMedium
-                        ),
-                        Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(Sizes.cardRadiusMd),
-                              bottomRight: Radius.circular(Sizes.productImageRadius)
-                            )
+            SizedBox(height: Sizes.spaceBetweenItems / 2),
+            // Details
+            Padding(
+                padding: EdgeInsets.only(left: Sizes.sm),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      ProductTitleText(
+                        title: "Nike Shoes",
+                        //smallSize: true,
+                      ),
+                      SizedBox(
+                        height: Sizes.spaceBetweenItems / 2,
+                      ),
+                      Row(
+                        children: [
+                          Text("Nike",
+                          style: Theme.of(context).textTheme.labelMedium,
+                            overflow: TextOverflow.ellipsis,
+                            maxLines: 1,
                           ),
-                        )
-                      ]
-                    )
-                  ]
-              )
-          )
-        ],
+                          const SizedBox(width: Sizes.xs),
+                          Icon(Iconsax.verify,
+                          color: AppColors.primary,
+                            size: Sizes.iconXs
+                          ),
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text("\$35",
+                          maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                            style: Theme.of(context).textTheme.headlineMedium
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                              color: AppColors.dark,
+                              borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(Sizes.cardRadiusMd),
+                                bottomRight: Radius.circular(Sizes.productImageRadius)
+                              )
+                            ),
+                            child: SizedBox(
+                              width: Sizes.iconLg * 1.2,
+                              height: Sizes.iconLg * 1.2,
+                              child: Icon(Iconsax.add_circle,
+                              color: AppColors.white
+                              ),
+                            )
+                          )
+                        ]
+                      )
+                    ]
+                )
+            )
+          ],
+        ),
       ),
     );
   }
