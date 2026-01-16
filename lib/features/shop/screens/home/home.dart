@@ -13,6 +13,7 @@ import '../../../../common/widgets/custom_shapes/container/primary_header.dart';
 import '../../../../common/widgets/image_text_widget/vertical_image_text.dart';
 import '../../../../common/widgets/images/rounded_image.dart';
 //import '../../../../common/widgets/product_cart_widget/custom_cart.dart';
+import '../../../../common/widgets/layout/grid_layout.dart';
 import '../../../../common/widgets/products/product_card/product_card_vertical.dart';
 import '../../../../common/widgets/search_container/search_container.dart';
 import '../../../../common/widgets/section_heading/section_heading.dart';
@@ -64,19 +65,17 @@ class Home extends StatelessWidget {
                     ImageStrings.promoBannerThree
                   ],
                   ),
-                  SizedBox(height: Sizes.spaceBetweenSections),
-                  GridView.builder(
-                      itemCount: 4,
-                      shrinkWrap: true,
-                      physics: const ScrollPhysics(),
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,
-                    mainAxisSpacing: Sizes.gridViewSpacing,
-                    crossAxisSpacing: Sizes.gridViewSpacing,
-                    mainAxisExtent: 288
+                  HeadingSection(text: "Popular Products",
+                  onPressed: (){
+
+                  },
                   ),
-                      itemBuilder: (context, index){
+                  SizedBox(height: Sizes.spaceBetweenSections),
+                  CustomGrid(itemCount: 4,
+                  itemBuilder: (context, index){
                     return VerticalProductCard();
-                      }),
+                  },
+                  ),
 
                 ],
               ),

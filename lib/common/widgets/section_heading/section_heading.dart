@@ -17,6 +17,7 @@ class HeadingSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(text,
           style: Theme.of(context).textTheme.headlineSmall,

@@ -10,6 +10,7 @@ import '../../../../utils/helpers/helper_functions.dart';
 import '../../../styles/shadow.dart';
 import '../../icons/circular_icon.dart';
 import '../../texts/product_title_text.dart';
+import '../product_price/product_price.dart';
 
 class VerticalProductCard extends StatelessWidget {
   const VerticalProductCard({super.key});
@@ -95,34 +96,31 @@ class VerticalProductCard extends StatelessWidget {
                           ),
                         ],
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text("\$35",
-                          maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
-                            style: Theme.of(context).textTheme.headlineMedium
-                          ),
-                          Container(
-                            decoration: BoxDecoration(
-                              color: AppColors.dark,
-                              borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(Sizes.cardRadiusMd),
-                                bottomRight: Radius.circular(Sizes.productImageRadius)
-                              )
-                            ),
-                            child: SizedBox(
-                              width: Sizes.iconLg * 1.2,
-                              height: Sizes.iconLg * 1.2,
-                              child: Icon(Iconsax.add_circle,
-                              color: AppColors.white
-                              ),
-                            )
-                          )
-                        ]
-                      )
                     ]
                 )
+            ),
+            Spacer(),
+            Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  PriceText(),
+                  Container(
+                      decoration: BoxDecoration(
+                          color: AppColors.dark,
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(Sizes.cardRadiusMd),
+                              bottomRight: Radius.circular(Sizes.productImageRadius)
+                          )
+                      ),
+                      child: SizedBox(
+                        width: Sizes.iconLg * 1.2,
+                        height: Sizes.iconLg * 1.2,
+                        child: Icon(Iconsax.add_circle,
+                            color: AppColors.white
+                        ),
+                      )
+                  )
+                ]
             )
           ],
         ),
@@ -130,5 +128,6 @@ class VerticalProductCard extends StatelessWidget {
     );
   }
 }
+
 
 
