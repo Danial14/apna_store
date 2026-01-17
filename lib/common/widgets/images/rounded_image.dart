@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../utils/constants/colors.dart';
 import '../../../utils/constants/sizes_strings.dart';
+import '../../../utils/helpers/helper_functions.dart';
 
 class RoundedImage extends StatelessWidget {
   final double? width, height;
@@ -32,6 +33,7 @@ class RoundedImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bool isDark = AppHelperFunctions.isDarkMode(context);
     return InkWell(
       onTap: onPressed,
       child: Container(
@@ -40,7 +42,7 @@ class RoundedImage extends StatelessWidget {
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(borderRadius),
               border: border,
-              color: backgroundColor
+              color: isDark ? AppColors.dark : AppColors.light,
           ),
           child: ClipRRect(
               borderRadius: applyImageRadius ? BorderRadius.circular(borderRadius) : BorderRadius.zero,

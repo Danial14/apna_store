@@ -103,7 +103,8 @@ class VerticalProductCard extends StatelessWidget {
             Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  PriceText(),
+                  Padding(padding: EdgeInsets.only(left: Sizes.sm),
+                      child: PriceText()),
                   Container(
                       decoration: BoxDecoration(
                           color: AppColors.dark,

@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 
 import 'features/shop/screens/home/home.dart';
+import 'features/shop/screens/store/store.dart';
 
 class BottomNavigation extends StatelessWidget {
   BottomNavigation({super.key});
@@ -19,8 +20,8 @@ class BottomNavigation extends StatelessWidget {
           NavigationDestination(icon: Icon(Iconsax.home),
             label: "Home",
           ),
-          NavigationDestination(icon: Icon(Iconsax.search_normal),
-            label: "Search",
+          NavigationDestination(icon: Icon(Iconsax.shop),
+            label: "Store",
           ),
           NavigationDestination(icon: Icon(Iconsax.heart),
             label: "Wishlist",
@@ -49,7 +50,7 @@ class NavigationController extends GetxController{
   final Rx<int> selectedIndex = 0.obs;
   final screens = [
     Home(),
-    Container(color: Colors.green),
+    Store(),
     Container(color: Colors.blue),
     Container(color: Colors.orange),
   ];

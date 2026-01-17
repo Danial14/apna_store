@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 
 import '../../../../utils/constants/colors.dart';
+import '../../../../utils/helpers/helper_functions.dart';
 
 class CustomCartWidget extends StatelessWidget {
 
@@ -15,11 +16,12 @@ class CustomCartWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bool isDark = AppHelperFunctions.isDarkMode(context);
     return Stack(
       children: [
         IconButton(onPressed: (){},
             icon: Icon(Iconsax.shopping_bag,
-              color: iconColor,
+              color: isDark ? AppColors.light : AppColors.dark,
             )
         ),
         Positioned(
