@@ -1,15 +1,22 @@
 import 'package:apna_store/common/widgets/appbar/customappbar.dart';
+import 'package:apna_store/common/widgets/custom_shapes/container/circular_container.dart';
 import 'package:apna_store/common/widgets/products/product_cart_widget/custom_cart.dart';
+import 'package:apna_store/common/widgets/section_heading/section_heading.dart';
+import 'package:apna_store/utils/constants/image_strings.dart';
+import 'package:apna_store/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
+import 'package:iconsax_flutter/iconsax_flutter.dart';
 
+import '../../../../common/widgets/search_container/search_container.dart';
 import '../../../../utils/constants/colors.dart';
+import '../../../../utils/constants/sizes_strings.dart';
 
 class Store extends StatelessWidget {
   const Store({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isDark = AppHelperFunctions.isDarkMode(context);
     return Scaffold(
       appBar: CustomAppbar(
         title: Text("Store",
@@ -24,9 +31,54 @@ class Store extends StatelessWidget {
           SliverAppBar(
             pinned: true,
             floating: true,
-            backgroundColor: isDark ? AppColors.light : AppColors.dark,
+            backgroundColor: isDark ? AppColors.dark : AppColors.light,
             expandedHeight: 440,
             automaticallyImplyLeading: false,
+            flexibleSpace: Padding(padding: EdgeInsets.all(Sizes.defaultSpace),
+            child: ListView(
+              shrinkWrap: true,
+              children: [
+                // Search bar
+                SizedBox(height: Sizes.spaceBetweenItems,),
+                SearchContainer(
+                  text: "Search",
+                  showBorder: true,
+                  icon: Iconsax.search_normal,
+                  showBackground: false,
+                  padding: EdgeInsets.zero,
+                ),
+                SizedBox(height: Sizes.spaceBetweenSections,),
+                // Feature brands
+                HeadingSection(text: "Feature Brands",
+                showActionButton: true,
+                  onPressed: (){
+
+                  },
+                ),
+                SizedBox(height: Sizes.spaceBetweenItems / 1.5),
+                CircularShape(
+                  padding: const EdgeInsets.all(Sizes.sm),
+                  backgroundColor: Colors.transparent,
+                  child: Row(
+                    children: [
+                      Container(
+                        width: 56,
+                        height: 56,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(100),
+                          color: isDark ? AppColors.dark : AppColors.light
+                        ),
+                        child: Image(
+                          image: AssetImage(ImageStrings.productImageOne),
+                          color: isDark ? AppColors.light : AppColors.dark,
+                        ),
+                      ),
+                    ],
+                  ),
+                )
+              ]
+            ),
+            ),
           )
         ];
       }, body: Container()),
