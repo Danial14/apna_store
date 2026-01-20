@@ -7,6 +7,7 @@ import 'package:apna_store/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 
+import '../../../../common/widgets/images/circular_image.dart';
 import '../../../../common/widgets/search_container/search_container.dart';
 import '../../../../utils/constants/colors.dart';
 import '../../../../utils/constants/sizes_strings.dart';
@@ -61,17 +62,8 @@ class Store extends StatelessWidget {
                   backgroundColor: Colors.transparent,
                   child: Row(
                     children: [
-                      Container(
-                        width: 56,
-                        height: 56,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(100),
-                          color: isDark ? AppColors.dark : AppColors.light
-                        ),
-                        child: Image(
-                          image: AssetImage(ImageStrings.productImageOne),
-                          color: isDark ? AppColors.light : AppColors.dark,
-                        ),
+                      CircularImage(isDark: isDark,
+                      image: ImageStrings.productImageOne,
                       ),
                     ],
                   ),
@@ -85,3 +77,5 @@ class Store extends StatelessWidget {
     );
   }
 }
+
+
