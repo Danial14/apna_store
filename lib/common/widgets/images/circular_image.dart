@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../../../utils/constants/colors.dart';
-import '../../../utils/constants/image_strings.dart';
 
 class CircularImage extends StatelessWidget {
   const CircularImage({
@@ -31,11 +30,12 @@ class CircularImage extends StatelessWidget {
       height: height,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(100),
-          color: isDark ? AppColors.dark : AppColors.light
+          color: backgroundColor ?? (isDark ? AppColors.dark : AppColors.light)
       ),
       child: Image(
-        image: AssetImage(image),
-        color: isDark ? AppColors.light : AppColors.dark,
+        fit: boxFit,
+        image: isNetworkImage ? NetworkImage(image) : AssetImage(image),
+        color: overlayColor,
       ),
     );
   }

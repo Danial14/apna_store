@@ -9,7 +9,9 @@ import 'package:iconsax_flutter/iconsax_flutter.dart';
 
 import '../../../../common/widgets/images/circular_image.dart';
 import '../../../../common/widgets/search_container/search_container.dart';
+import '../../../../common/widgets/texts/brand_title_text.dart';
 import '../../../../utils/constants/colors.dart';
+import '../../../../utils/constants/enums.dart';
 import '../../../../utils/constants/sizes_strings.dart';
 
 class Store extends StatelessWidget {
@@ -64,7 +66,23 @@ class Store extends StatelessWidget {
                     children: [
                       CircularImage(isDark: isDark,
                       image: ImageStrings.productImageOne,
+                        overlayColor: isDark ? AppColors.light : AppColors.dark,
+                        backgroundColor: Colors.transparent,
                       ),
+                      const SizedBox(width: Sizes.spaceBetweenItems / 2),
+                      // Text
+                      Column(
+                        children: [
+                          const BrandTitleText(title: "Nike",
+                          brandTextSize: TextSizes.large,
+                          ),
+                          Text(
+                            "256 products",
+                            overflow: TextOverflow.ellipsis,
+                            style: Theme.of(context).textTheme.labelMedium
+                          )
+                        ],
+                      )
                     ],
                   ),
                 )

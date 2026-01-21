@@ -9,6 +9,7 @@ import '../../../../utils/constants/sizes_strings.dart';
 import '../../../../utils/helpers/helper_functions.dart';
 import '../../../styles/shadow.dart';
 import '../../icons/circular_icon.dart';
+import '../../texts/brand_title_text.dart';
 import '../../texts/product_title_text.dart';
 import '../product_price/product_price.dart';
 
@@ -82,20 +83,7 @@ class VerticalProductCard extends StatelessWidget {
                       SizedBox(
                         height: Sizes.spaceBetweenItems / 2,
                       ),
-                      Row(
-                        children: [
-                          Text("Nike",
-                          style: Theme.of(context).textTheme.labelMedium,
-                            overflow: TextOverflow.ellipsis,
-                            maxLines: 1,
-                          ),
-                          const SizedBox(width: Sizes.xs),
-                          Icon(Iconsax.verify,
-                          color: AppColors.primary,
-                            size: Sizes.iconXs
-                          ),
-                        ],
-                      ),
+                      BrandTitleText(title: "Nike",),
                     ]
                 )
             ),
@@ -129,6 +117,8 @@ class VerticalProductCard extends StatelessWidget {
     );
   }
 }
+
+
 
 
 
