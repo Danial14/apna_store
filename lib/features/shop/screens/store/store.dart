@@ -1,6 +1,7 @@
 import 'package:apna_store/common/widgets/appbar/customappbar.dart';
 import 'package:apna_store/common/widgets/custom_shapes/container/circular_container.dart';
 import 'package:apna_store/common/widgets/layout/grid_layout.dart';
+import 'package:apna_store/common/widgets/products/product_card/product_card_vertical.dart';
 import 'package:apna_store/common/widgets/products/product_cart_widget/custom_cart.dart';
 import 'package:apna_store/common/widgets/section_heading/section_heading.dart';
 import 'package:apna_store/utils/constants/image_strings.dart';
@@ -118,7 +119,25 @@ class Store extends StatelessWidget {
               ],),
             )
           ];
-        }, body: Container()),
+        }, body: TabBarView(children: [
+          Padding(
+            padding: EdgeInsets.all(Sizes.defaultSpace),
+            child: Column(
+              children: [
+                // Brands
+                CircularShape(
+                  backgroundColor: Colors.transparent,
+                  margin: EdgeInsets.only(bottom: Sizes.spaceBetweenItems),
+                  child: Column(
+                    children: [
+                      VerticalProductCard()
+                    ],
+                  ),
+                )
+              ],
+            )
+          )
+        ])),
       ),
     );
   }
