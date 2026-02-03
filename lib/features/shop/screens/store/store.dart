@@ -9,6 +9,7 @@ import 'package:apna_store/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 
+import '../../../../common/widgets/brands/brand_card.dart';
 import '../../../../common/widgets/images/circular_image.dart';
 import '../../../../common/widgets/search_container/search_container.dart';
 import '../../../../common/widgets/tabbar/custom_tabbar.dart';
@@ -120,23 +121,25 @@ class Store extends StatelessWidget {
             )
           ];
         }, body: TabBarView(children: [
-          Padding(
-            padding: EdgeInsets.all(Sizes.defaultSpace),
-            child: Column(
-              children: [
-                // Brands
-                CircularShape(
-                  backgroundColor: Colors.transparent,
-                  margin: EdgeInsets.only(bottom: Sizes.spaceBetweenItems),
-                  child: Column(
-                    children: [
-                      VerticalProductCard()
-                    ],
-                  ),
-                )
-              ],
-            )
-          )
+          ListView(
+            children: [
+              Padding(
+                  padding: EdgeInsets.all(Sizes.defaultSpace),
+                  child:
+                      // Brands
+                      CircularShape(
+                        backgroundColor: Colors.transparent,
+                        margin: EdgeInsets.only(bottom: Sizes.spaceBetweenItems),
+                        child: VerticalBrandCard(),
+
+                      ),
+                ),
+            ],
+          ),
+          ListView(children: const [Center(child: Text('Furniture'))]),
+          ListView(children: const [Center(child: Text('Electronics'))]),
+          ListView(children: const [Center(child: Text('Cosmetics'))]),
+          ListView(children: const [Center(child: Text('Clothes'))]),
         ])),
       ),
     );

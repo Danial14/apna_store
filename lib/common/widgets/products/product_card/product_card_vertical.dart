@@ -23,6 +23,7 @@ class VerticalProductCard extends StatelessWidget {
       onTap: (){},
       child: Container(
         width: 180,
+        height: 180,
         padding: const EdgeInsets.all(1),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(Sizes.productImageRadius),
@@ -34,7 +35,6 @@ class VerticalProductCard extends StatelessWidget {
         child: Column(
           children: [
             CircularShape(
-              height: 180,
               padding: EdgeInsets.all(Sizes.sm),
               backgroundColor: isDark ? AppColors.dark : AppColors.light,
               child: Stack(
