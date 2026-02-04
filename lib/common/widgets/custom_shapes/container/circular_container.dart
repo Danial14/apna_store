@@ -12,7 +12,8 @@ class CircularShape extends StatelessWidget {
     this.radius = Sizes.cardRadiusLg,
     this.padding = EdgeInsets.zero,
     this.margin = EdgeInsets.zero,
-    this.backgroundColor = AppColors.white
+    this.backgroundColor = AppColors.white,
+    this.showBorder = false
   });
   final double? width;
   final double? height;
@@ -21,6 +22,7 @@ class CircularShape extends StatelessWidget {
   final Widget? child;
   final Color backgroundColor;
   final EdgeInsets margin;
+  final bool? showBorder;
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +30,7 @@ class CircularShape extends StatelessWidget {
         width: width,
         height: height,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(radius),
+            borderRadius: showBorder! ? BorderRadius.circular(radius) : null,
             color: backgroundColor,
           border: Border.all(color: AppColors.grey)
         ),

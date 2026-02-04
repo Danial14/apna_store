@@ -128,11 +128,25 @@ class Store extends StatelessWidget {
                   child:
                       // Brands
                       CircularShape(
-                        backgroundColor: Colors.transparent,
-                        margin: EdgeInsets.only(bottom: Sizes.spaceBetweenItems),
-                        child: VerticalBrandCard(),
-
-                      ),
+                            backgroundColor: Colors.transparent,
+                            margin: EdgeInsets.only(bottom: Sizes.spaceBetweenItems),
+                            child: Column(
+                              children: [
+                               VerticalBrandCard(),
+                                Row(
+                                  children: [
+                                    CircularShape(
+                                      backgroundColor: Colors.transparent,
+                                        height: 100,
+                                        margin: const EdgeInsets.only(right: Sizes.sm),
+                                        padding: const EdgeInsets.all(Sizes.md),
+                                        child: Image.asset("assets/images/products/leather_jacket_1.png")
+                                    )
+                                  ],
+                                )
+                              ],
+                            ),
+                          ),
                 ),
             ],
           ),

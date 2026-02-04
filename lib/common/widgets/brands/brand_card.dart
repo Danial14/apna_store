@@ -12,7 +12,8 @@ import '../images/circular_image.dart';
 import '../texts/brand_title_text.dart';
 
 class VerticalBrandCard extends StatelessWidget {
-  const VerticalBrandCard({super.key});
+  VerticalBrandCard({super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
