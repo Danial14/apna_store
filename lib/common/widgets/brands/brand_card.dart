@@ -23,6 +23,7 @@ class VerticalBrandCard extends StatelessWidget {
       child: CircularShape(
         padding: const EdgeInsets.all(Sizes.sm),
         backgroundColor: Colors.transparent,
+        //showBorder: true,
         child: Row(
           children: [
             Flexible(

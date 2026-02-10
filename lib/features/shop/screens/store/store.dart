@@ -4,12 +4,14 @@ import 'package:apna_store/common/widgets/layout/grid_layout.dart';
 import 'package:apna_store/common/widgets/products/product_card/product_card_vertical.dart';
 import 'package:apna_store/common/widgets/products/product_cart_widget/custom_cart.dart';
 import 'package:apna_store/common/widgets/section_heading/section_heading.dart';
+import 'package:apna_store/features/shop/screens/store/widgets/category_tab.dart';
 import 'package:apna_store/utils/constants/image_strings.dart';
 import 'package:apna_store/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 
 import '../../../../common/widgets/brands/brand_card.dart';
+import '../../../../common/widgets/brands/brand_showcase.dart';
 import '../../../../common/widgets/images/circular_image.dart';
 import '../../../../common/widgets/search_container/search_container.dart';
 import '../../../../common/widgets/tabbar/custom_tabbar.dart';
@@ -121,43 +123,51 @@ class Store extends StatelessWidget {
             )
           ];
         }, body: TabBarView(children: [
-          ListView(
-            children: [
-              Padding(
-                  padding: EdgeInsets.all(Sizes.defaultSpace),
-                  child:
-                      // Brands
-                      CircularShape(
-                            backgroundColor: Colors.transparent,
-                            margin: EdgeInsets.only(bottom: Sizes.spaceBetweenItems),
-                            child: Column(
-                              children: [
-                               VerticalBrandCard(),
-                                Row(
-                                  children: [
-                                    CircularShape(
-                                      backgroundColor: Colors.transparent,
-                                        height: 100,
-                                        margin: const EdgeInsets.only(right: Sizes.sm),
-                                        padding: const EdgeInsets.all(Sizes.md),
-                                        child: Image.asset("assets/images/products/leather_jacket_1.png")
-                                    )
-                                  ],
-                                )
-                              ],
-                            ),
-                          ),
+          CategoryTab(
+            child: ListView(
+              physics: NeverScrollableScrollPhysics(),
+              children: [
+                Padding(
+                    padding: EdgeInsets.all(Sizes.defaultSpace),
+                    child:
+                        // Brands
+                        CircularShape(
+                              backgroundColor: Colors.transparent,
+                              margin: EdgeInsets.only(bottom: Sizes.spaceBetweenItems),
+                              showBorder: true,
+                              child: BrandShowcase(images: ["assets/images/products/leather_jacket_1.png",
+                              "assets/images/products/leather_jacket_1.png",
+                                "assets/images/products/leather_jacket_1.png"
+                              ],),
+                  ),
                 ),
-            ],
+                Padding(
+                  padding: const EdgeInsets.only(left: 8.0),
+                  child: HeadingSection(text: "You Might like",
+                  onPressed: (){
+
+                  },
+                  ),
+                ),
+                const SizedBox(height: Sizes.spaceBetweenItems),
+                Padding(
+                  padding: const EdgeInsets.only(left: 8.0),
+                  child: CustomGrid(itemCount: 8, itemBuilder: (context, index){
+                    return VerticalProductCard();
+                  }),
+                )
+              ],
+            ),
           ),
-          ListView(children: const [Center(child: Text('Furniture'))]),
-          ListView(children: const [Center(child: Text('Electronics'))]),
-          ListView(children: const [Center(child: Text('Cosmetics'))]),
-          ListView(children: const [Center(child: Text('Clothes'))]),
+          CategoryTab(child: ListView(children: const [Center(child: Text('Furniture'))])),
+          CategoryTab(child: ListView(children: const [Center(child: Text('Electronics'))])),
+          CategoryTab(child: ListView(children: const [Center(child: Text('Cosmetics'))])),
+          CategoryTab(child: ListView(children: const [Center(child: Text('Clothes'))])),
         ])),
       ),
     );
   }
 }
+
 
 

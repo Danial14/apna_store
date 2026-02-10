@@ -32,7 +32,7 @@ class CircularShape extends StatelessWidget {
         decoration: BoxDecoration(
             borderRadius: showBorder! ? BorderRadius.circular(radius) : null,
             color: backgroundColor,
-          border: Border.all(color: AppColors.grey)
+          border: showBorder! ? Border.all(color: AppColors.grey) : null
         ),
         padding: padding,
         margin: margin,
