@@ -34,7 +34,7 @@ class CircularIcon extends StatelessWidget {
       ),
       child: IconButton(
           onPressed: onPressed,
-          icon: Icon(Iconsax.heart,
+          icon: Icon(icon,
           color: color,
           )
       ),

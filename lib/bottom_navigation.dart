@@ -6,6 +6,7 @@ import 'package:iconsax_flutter/iconsax_flutter.dart';
 
 import 'features/shop/screens/home/home.dart';
 import 'features/shop/screens/store/store.dart';
+import 'features/wishlist/wishlist.dart';
 
 class BottomNavigation extends StatelessWidget {
   BottomNavigation({super.key});
@@ -51,7 +52,7 @@ class NavigationController extends GetxController{
   final screens = [
     Home(),
     Store(),
-    Container(color: Colors.blue),
+    FavouriateScreen(),
     Container(color: Colors.orange),
   ];
 }
