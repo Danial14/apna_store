@@ -50,7 +50,9 @@ class Home extends StatelessWidget {
                       HomeCategories(),
                     ],
                   )
-                )
+                ),
+                SizedBox(height: Sizes.spaceBetweenSections,),
+
               ],
             ),
             ),

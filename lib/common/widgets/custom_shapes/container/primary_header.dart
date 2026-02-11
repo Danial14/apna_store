@@ -18,9 +18,7 @@ class PrimaryHeader extends StatelessWidget {
           color: AppColors.primary
       ),
       padding: EdgeInsets.all(0),
-      child: SizedBox(
-        height: 400,
-        child: Stack(
+      child: Stack(
           children: [
             Positioned(
                 top: -150,
@@ -33,7 +31,6 @@ class PrimaryHeader extends StatelessWidget {
             child
           ],
         ),
-      ),
     ),);
   }
 }
