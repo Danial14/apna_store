@@ -1,6 +1,8 @@
 import 'package:apna_store/common/widgets/section_heading/section_heading.dart';
+import 'package:apna_store/features/personalization/screens/profile/widgets/profile_menu.dart';
 import 'package:apna_store/utils/constants/sizes_strings.dart';
 import 'package:flutter/material.dart';
+import 'package:iconsax_flutter/iconsax_flutter.dart';
 
 import '../../../../common/widgets/appbar/customappbar.dart';
 import '../../../../common/widgets/images/circular_image.dart';
@@ -53,6 +55,11 @@ class ProfileScreen extends StatelessWidget {
               const SizedBox(height: Sizes.spaceBetweenItems),
               const HeadingSection(text: "Profile Information",
               showActionButton: false,
+              ),
+              const SizedBox(height: Sizes.spaceBetweenItems,),
+              ProfileMenu(onPressed: (){},
+              title: "Name",
+                value: "Code",
               )
             ],
           )
@@ -61,3 +68,4 @@ class ProfileScreen extends StatelessWidget {
     );
   }
 }
+

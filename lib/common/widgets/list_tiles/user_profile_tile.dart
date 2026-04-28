@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 
+import '../../../features/personalization/screens/profile/profile.dart';
 import '../../../utils/constants/colors.dart';
 import '../../../utils/constants/image_strings.dart';
 import '../images/rounded_image.dart';
@@ -25,7 +26,11 @@ class UserProfileTile extends StatelessWidget {
       subtitle: Text("abc@test.com",
         style: Theme.of(context).textTheme.bodyMedium!.apply(color: AppColors.white),
       ),
-      trailing: IconButton(onPressed: (){}, icon: Icon(
+      trailing: IconButton(onPressed: (){
+        Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (ctx){
+          return ProfileScreen();
+        }));
+      }, icon: Icon(
         Iconsax.edit,
         color: AppColors.white,
       )
