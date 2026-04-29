@@ -60,7 +60,40 @@ class ProfileScreen extends StatelessWidget {
               ProfileMenu(onPressed: (){},
               title: "Name",
                 value: "Code",
+              ),
+              ProfileMenu(onPressed: (){},
+              title: "Username",
+                value: "Coding",
+              ),
+              const SizedBox(height: Sizes.spaceBetweenItems,),
+              Divider(),
+              const SizedBox(height: Sizes.spaceBetweenItems,),
+
+              // Heading personal info
+              const HeadingSection(text: "Personal Information",
+              showActionButton: false,
+              ),
+              const SizedBox(height: Sizes.spaceBetweenItems,),
+              ProfileMenu(onPressed: (){}, title: "User Id", value: "134", icon: Iconsax.copy,),
+              ProfileMenu(onPressed: (){}, title: "Email", value: "test@gmail.com"),
+              ProfileMenu(onPressed: (){}, title: "Phone Number", value: "1234",),
+              ProfileMenu(onPressed: (){}, title:  "Gender", value: "Male"),
+              ProfileMenu(onPressed: (){}, title: "Date of Birth", value: "01/01/2000"),
+              Divider(),
+              const SizedBox(height: Sizes.spaceBetweenItems,),
+
+              Center(
+                child: TextButton(
+                  onPressed: (){},
+                  child: const Text("Close Account",
+                  style: TextStyle(
+                    color: Colors.red
+                  ),
+                  ),
+                )
               )
+
+
             ],
           )
         )

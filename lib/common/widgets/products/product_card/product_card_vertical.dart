@@ -1,8 +1,10 @@
 import 'package:apna_store/common/widgets/custom_shapes/container/circular_container.dart';
 import 'package:apna_store/common/widgets/images/rounded_image.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 
+import '../../../../features/shop/screens/product_details/product_details.dart';
 import '../../../../utils/constants/colors.dart';
 import '../../../../utils/constants/image_strings.dart';
 import '../../../../utils/constants/sizes_strings.dart';
@@ -20,7 +22,11 @@ class VerticalProductCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final bool isDark = AppHelperFunctions.isDarkMode(context);
     return GestureDetector(
-      onTap: (){},
+      onTap: (){
+        Get.to((){
+          return ProductDetails();
+        });
+      },
       child: Container(
         width: 180,
         height: 180,
