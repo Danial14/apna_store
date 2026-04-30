@@ -26,6 +26,7 @@ class ImageStrings{
 
   // products
   static const productImageOne = "assets/images/products/nike-shoes.png";
+  static const productImageTwo = "assets/images/products/leather_jacket_1.png";
 
   // user
   static const user = "assets/images/user/person.png";
